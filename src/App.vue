@@ -1,29 +1,31 @@
 <template>
+  <!-- eslint-disable max-len -->
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <header class="container container-fluid text-center d-flex align-items-center justify-content-center bg-dark pt-2 pb-2">
+      <img src="https://static.tvmaze.com/images/tvm-header-logo.png" alt="">
+      <h3 class="text-xl text-light ml-1"> Technical assignment </h3>
+    </header>
+    <main class="container">
+      <content-layout>
+        <router-view />
+      </content-layout>
+    </main>
+    <footer class="container container-fluid text-left bg-dark pt-2 pb-2">
+      <p class="text-light">Created by Kseniia Lvova</p>
+    </footer>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+import ContentLayout from '@/components/ContentLayout/ContentLayout.vue'
+
+@Component({
+  name: 'App',
+  components: {
+    ContentLayout
   }
+})
+export default class Home extends Vue {
 }
-</style>
+</script>
