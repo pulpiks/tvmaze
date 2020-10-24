@@ -11,7 +11,7 @@ import ShowsListContainer from '@/components/ShowsList/ShowsListContainer.vue'
 import ShowsFilters from '@/components/ShowsList/ShowsFilters.vue'
 
 @Component({
-  name: 'Home',
+  name: 'MainPage',
   components: {
     ShowsListContainer,
     ShowsFilters

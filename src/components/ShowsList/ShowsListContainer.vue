@@ -9,14 +9,14 @@
   <b-container v-else class="px-0" fluid data-test="shows">
     <template v-if="filteredShows.length">
       <div class="shows row row-cols-1 row-cols-lg-4 row-cols-md-3 align-items-stretch d-flex">
-        <show-card v-for="show in filteredShows" :key="show.id" :data="show" class="col mb-4">
+        <show-card v-for="show in filteredShows" :key="show.id" :data="show" class="col mb-4" data-test="show-list-item">
         </show-card>
       </div>
     </template>
     <div
       v-else-if="!filteredShows.length && !loading"
       class="alert px-sm-3 row my-2"
-      data-test="services-list-empty"
+      data-test="shows-list-empty"
       role="alert"
     >
       <div class="d-flex flex-row">

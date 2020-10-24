@@ -18,7 +18,7 @@ import { Component, Vue, Prop } from 'vue-property-decorator'
 import ShowDetails from './ShowDetails.vue'
 
 @Component({
-  name: 'ShowPage',
+  name: 'ShowDetailsContainer',
   components: {
     ShowDetails
   }
