@@ -1,7 +1,7 @@
 <template>
-  <div class="mt-2">
+  <div class="mt-2" data-test="show-details">
     <!-- eslint-disable-next-line vue/no-v-html -->
-    <h1 data-test="show-details-title">{{show.name}}</h1>
+    <h1 data-test="show-details-name">{{show.name}}</h1>
     <b-container fluid class="m-0 p-0">
       <b-row no-gutters>
           <b-col cols="12" md="4">

@@ -28,7 +28,7 @@ const extendAxiosError = (error: AxiosError) => {
 
 export const generalErrorHandler = (vueInstance: any) => (error: any) => {
   const code = error.status
-  const title = vueInstance.$t('error.general.message')
+  const title = 'Error'
   const description = +error.status !== 400 ? `${code} - ${error.message}` : error.data
   // create bootstrap-vue toastr for errors
   vueInstance.$bvToast.toast(description, {

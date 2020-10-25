@@ -5,7 +5,7 @@
         <b-spinner label="Loading..." variant="secondary"></b-spinner>
       </div>
       <div v-else>
-        <show-details :show="show"></show-details>
+        <show-details :show="show" data-test="show-page-details"></show-details>
       </div>
     </b-container>
   </div>
