@@ -45,7 +45,7 @@ import { servicesAPI } from '@/api/services'
 // eslint-disable-next-line import/first
 import ShowsListContainer from '../ShowsListContainer.vue'
 
-describe('service-list', () => {
+describe('ShowsListContainer', () => {
   beforeAll(() => {})
   afterAll(() => {})
 

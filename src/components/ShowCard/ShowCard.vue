@@ -3,24 +3,23 @@
   <div class="show-card fluid" data-test="show-card">
     <b-card
       thumbnail
-      :img-src="data.image.medium"
+      :img-src="data.image.medium || data.image.original"
       :img-alt="data.name"
       img-top
       class="mb-2 d-flex show-card__container position-relative"
+      data-test="show-card-image"
     >
       <div>
-          <div>
-            <b-card-text>
-              <h4>{{data.name}}</h4>
-            </b-card-text>
-          </div>
+        <b-card-text data-test="show-card-name">
+          <h4>{{data.name}}</h4>
+        </b-card-text>
       </div>
 
       <div v-if="data.rating.average" class="badge badge-secondary d-flex justify-content-end align-items-center position-absolute bg-light p-1 show-card__rating">
         <b-icon icon="star-fill" variant="warning" font-scale="2"></b-icon>
-        <span class="mb-0 ml-2 text-dark font-weight-bold">{{data.rating.average}}</span>
+        <span class="mb-0 ml-2 text-dark font-weight-bold" data-test="show-card-rating">{{data.rating.average}}</span>
       </div>
-      <router-link :to="'/shows/' + data.id" class="stretched-link"></router-link>
+      <router-link :to="'/shows/' + data.id" class="stretched-link" data-test="show-card-link"></router-link>
     </b-card>
   </div>
 </template>
