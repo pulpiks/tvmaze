@@ -6,7 +6,7 @@
     "dev-watch": "npm run serve -- --watch",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit --verbose",
+    "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "lint-fix": "vue-cli-service lint --fix"
   },

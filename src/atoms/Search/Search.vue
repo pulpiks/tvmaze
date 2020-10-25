@@ -19,15 +19,17 @@
               type="text"
               class="searchInput pl-2 pr-2 pb-0 pt-0"
               :placeholder="placeholder"
+              data-test="search-input"
               @input="onChangeValue"
             ></b-form-input>
             <button type="button" class="search__btn-close ml-2"
-              aria-label="Close" :disabled="isCloseBtnDisabled" @click="clearSearch">
+              aria-label="Close" :disabled="isCloseBtnDisabled"
+                @click="clearSearch" data-test="search-btn-close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
         </b-col>
-        <b-col class="ml-1" v-if="isSubmitBtnVisible">
+        <b-col class="ml-1" v-if="isSubmitBtnVisible" data-test="search-btn-submit">
           <b-button
             v-if="isSubmitBtnVisible"
             :disabled="isSubmitBtnDisabled"

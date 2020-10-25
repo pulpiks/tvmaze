@@ -6,7 +6,7 @@ exports[`ShowDetails should match the snapshot 1`] = `
   <b-container-stub fluid="" class="m-0 p-0">
     <b-row-stub no-gutters="">
       <b-col-stub cols="12" md="4">
-        <b-img src="http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg" alt="Under the Dome" fluid="" data-test="show-details-image" class="w-100"></b-img>
+        <b-img-stub src="http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg" alt="Under the Dome" fluid="" data-test="show-details-image" class="w-100"></b-img-stub>
       </b-col-stub>
       <b-col-stub cols="12" md="8" class="pl-md-3">
         <h3 class="mb-2 mt-2 mt-md-0">Details</h3>

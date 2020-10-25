@@ -23,7 +23,7 @@ const testAnchors = {
 
 const setUp = (props = {}) => {
   const wrapper = shallowMount(ShowDetails, {
-    stubs: ['b-container', 'b-row', 'b-col', 'b-badge', 'b-icon'],
+    stubs: ['b-container', 'b-row', 'b-col', 'b-badge', 'b-icon', 'b-img'],
     propsData: props
   })
   return wrapper
