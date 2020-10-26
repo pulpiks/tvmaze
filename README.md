@@ -48,9 +48,9 @@ I implemented 3 pages:
 
 **Main page** contains filters by genres, ratings, full list of shows previews and a search form. Search is implemented on client side for now, but I would consider to use public API for the text search.
 
-**Details page** can be accessed by the url `/shows/:id`. It contains images and text info retrieved from the response.
+**Details page** can be accessed by the url `/shows/:id`. It contains detailed info retrieved from the response.
 
-**Error page** is shown for the missing urls and in case of other errors.
+**Error page** is shown for the missing urls.
 
 I splitted the components into two functional groups: atoms and components. Atoms present general components like dropdown, search. Components present container component approach.
 
