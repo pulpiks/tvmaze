@@ -1,6 +1,6 @@
 <template>
   <div class="show-page" data-test="show-page">
-    <b-container v-if="show" fluid data-test="show">
+    <b-container v-if="show" fluid data-test="show-page-container">
       <div v-if="loading" class="d-flex justify-content-center my-2">
         <b-spinner label="Loading..." variant="secondary"></b-spinner>
       </div>

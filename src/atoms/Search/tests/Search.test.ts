@@ -49,7 +49,7 @@ describe('Search component', () => {
 
   it('render snapshot correctly', () => {
     wrapper = setUp(props)
-    expect(wrapper).toMatchSnapshot()
+    expect(wrapper.element).toMatchSnapshot()
   })
 
   it('render all basic show`s attributes correctly', () => {

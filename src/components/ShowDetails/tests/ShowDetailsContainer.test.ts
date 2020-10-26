@@ -52,7 +52,7 @@ describe('ShowDetailsContainer', () => {
     })
 
     wrapper.vm.$nextTick(() => {
-      expect(wrapper.html()).toMatchSnapshot()
+      expect(wrapper.element).toMatchSnapshot()
       expect(wrapper.find('[data-test=\'show-page-details\']').exists()).toBe(true)
       done()
     })

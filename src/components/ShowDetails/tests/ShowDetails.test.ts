@@ -48,7 +48,7 @@ describe('ShowDetails', () => {
   })
 
   it('should match the snapshot', () => {
-    expect(wrapper.html()).toMatchSnapshot()
+    expect(wrapper.element).toMatchSnapshot()
   })
 
   it('render main fields correctly', () => {
