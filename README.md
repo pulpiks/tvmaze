@@ -65,5 +65,5 @@ There are two types of synchronization and they can complement each other:
 - Add internalization
 - Improve stylings
 
-[logo]: https://drive.google.com/file/d/19p9FNrurQZek9rfPKj5Nuyh7_oBjCP5N/view?usp=sharing "Logo Title Text 2"
+[logo]: https://lh3.googleusercontent.com/e4l2HrsliYOOoFiC7xZXwx9EUV4kHaGk6pw2c3QrF_zmUzTSeNmjSxGW1ck-VG96WChyuxoujUQFij1uUCd_=w3360-h608-rw "Logo Title Text 2"
 	
