@@ -12,7 +12,11 @@
       <b-form-checkbox
         v-for="option in options"
         :key="option.value"
-        :class="classNameCheckbox"
+        :class="{
+          [classNameCheckbox]: true,
+          'flex-grow-0': true,
+          'rounded': true
+        }"
         :value="option.value"
         >{{ option.text }}
       </b-form-checkbox
