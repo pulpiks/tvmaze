@@ -64,4 +64,6 @@ There are two types of synchronization and they can complement each other:
 - Put actions in another place to make them more reusable
 - Add internalization
 - Improve stylings
+
+[logo]: https://drive.google.com/file/d/19p9FNrurQZek9rfPKj5Nuyh7_oBjCP5N/view?usp=sharing "Logo Title Text 2"
 	
