@@ -58,11 +58,12 @@ Almost each component is covered with unit tests which either check their logic 
 
 I added internalisation vue-i18n and applied it on the error page
 
+Also I implemented vuex-persist to keep at least filters in local storage when some filters are active and we navigate to the details page and back. In this case all chosen filters will be active and part of state linked to the filterts will not be reset
+
 **Todo (things that I would consider to do next):**
 
 There are two types of synchronization and they can complement each other:
 
--  Implement vuex-persist to keep results in local storage
 - Put actions in another place to make them more reusable
 - Improve stylings
 
