@@ -56,13 +56,14 @@ I splitted the components into two functional groups: atoms and components. Atom
 
 Almost each component is covered with unit tests which either check their logic or do a match with the snapshots.
 
+I added internalisation vue-i18n and applied it on the error page
+
 **Todo (things that I would consider to do next):**
 
 There are two types of synchronization and they can complement each other:
 
 -  Implement vuex-persist to keep results in local storage
 - Put actions in another place to make them more reusable
-- Add internalization
 - Improve stylings
 
 [screenshot](https://imgur.com/f73T7Uq)
