@@ -1,4 +1,5 @@
 import { StoreOptions } from 'vuex'
+import VuexPersistence from 'vuex-persist'
 
 import {
   CHANGE_FILTERS, FILTER_GENRE, FILTER_RATING, RESET_SEARCH, FILTER_SEARCH
@@ -18,7 +19,19 @@ const initialState = {
   filters: defaultFiltersState
 }
 
+const vuexLocal = new VuexPersistence({
+  key: 'tvmaze',
+  storage: window.localStorage,
+  reducer: (state: S) => ({
+    filters: {
+      ...state.filters
+    }
+  })
+})
+
+
 export const options: StoreOptions<any> = {
+  plugins: [vuexLocal.plugin],
   state: { ...initialState },
   mutations: {
     [FETCH_SHOWS](state, action) {
