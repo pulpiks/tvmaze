@@ -34,7 +34,7 @@ Npm - 6.14.18
 
 ### Lints and fixes files
 
-```yarn lint```
+**yarn lint**
 
 
 I implemented 3 pages:
