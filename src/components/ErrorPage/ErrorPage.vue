@@ -6,19 +6,16 @@
       class="bg-white text-center mt-5"
       data-test="not-found"
     >
-      <b-row>
-        <b-col>
-          <h5>Error {{ code }}</h5>
-        </b-col>
+      <b-row align-h="center">
+          <h5>{{ $t(`error.general.message`) }}</h5>
       </b-row>
-      <b-row class="pt-3" no-gutters>
-        <b-col>
-          <p>
-            <router-link to="/" data-test="back-home">
-              <b-button>Back main page</b-button>
-            </router-link>
-          </p>
-        </b-col>
+      <b-row align-h="center">
+          <h5>{{ $t(`errorPage.${code}.title`) }}</h5>
+      </b-row>
+      <b-row class="pt-3" no-gutters align-h="center">
+        <router-link to="/" data-test="back-home">
+          <b-button>{{ $t(`errorPage.${code}.button`) }}</b-button>
+        </router-link>
       </b-row>
     </b-container>
   </div>
@@ -28,17 +25,10 @@
 import { Component, Prop, Vue } from 'vue-property-decorator'
 
 @Component({
-  name: 'ErrorPage',
-  components: {
-  },
-  computed: {
-    title() {
-      return ''
-    }
-  }
+  name: 'ErrorPage'
 })
 export default class ErrorPage extends Vue {
-   @Prop() private code!: number;
+   @Prop() private code!: string;
 }
 
 </script>
