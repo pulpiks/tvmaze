@@ -1,4 +1,6 @@
-import {createStore, createEffect, createEvent, combine} from 'effector'
+import {
+  createStore, createEffect, createEvent, combine
+} from 'effector'
 
 export type TGenre = string
 
@@ -103,12 +105,12 @@ export type TFilterState = {
 export const defaultFiltersState: TFilterState = {
   [TEnumFilters.genres]: [],
   [TEnumFilters.sort]: TEnumSortRating.DESC,
-  [TEnumFilters.searchText]: '',
+  [TEnumFilters.searchText]: ''
 }
 
 export const SORTING = {
   [TEnumSortRating.ASC]: 'lowest rated',
-  [TEnumSortRating.DESC]: 'top rated',
+  [TEnumSortRating.DESC]: 'top rated'
 }
 
 export const defaultShowsState: TShowState = []
@@ -124,8 +126,8 @@ export const sortByRating = (sort: TEnumSortRating) => (
   show2: TShow
 ) => {
   if (
-    !Number.isNaN(show1.rating.average) &&
-    !Number.isNaN(show2.rating.average)
+    !Number.isNaN(show1.rating.average)
+    && !Number.isNaN(show2.rating.average)
   ) {
     return sort === TEnumSortRating.ASC
       ? show1.rating.average! - show2.rating!.average!
@@ -134,9 +136,8 @@ export const sortByRating = (sort: TEnumSortRating) => (
   return 0
 }
 
-export const searchByText = (searchTerms: string[]) => (show: TShow) =>
-  !searchTerms.length ||
-  searchTerms.every(term => show.name.toLowerCase().includes(term))
+export const searchByText = (searchTerms: string[]) => (show: TShow) => !searchTerms.length
+  || searchTerms.every(term => show.name.toLowerCase().includes(term))
 
 export interface TFiltersState {
   genres: string[]
@@ -156,12 +157,10 @@ export const $filters = createStore({
   sort: TEnumSortRating.DESC
 })
 
-$filters.on(changeFilter, (state, payload: ChangeFilterPayload) => {
-  return {
-    ...state,
-    ...payload
-  }
-})
+$filters.on(changeFilter, (state, payload: ChangeFilterPayload) => ({
+  ...state,
+  ...payload
+}))
 
 export const fetchShowsFx = createEffect(async () => {
   const response = await fetch('https://api.tvmaze.com/shows')
@@ -175,20 +174,17 @@ type ShowMap = {
   [key in typeof TShow.id]: TShow
 }
 
-export const $showsMap = $shows.map((shows: TShow[]) => {
-  return shows.reduce((res: ShowMap, s) => {
-    res[s.id] = s
-    return res
-  }, {})
-})
-
+export const $showsMap = $shows.map((shows: TShow[]) => shows.reduce((res: ShowMap, s) => {
+  res[s.id] = s
+  return res
+}, {}))
 
 
 export const filteredShows = combine(
   $shows,
   $filters,
   (shows: TShow[], filters: TFiltersState) => {
-    const {searchText, genres, sort} = filters
+    const { searchText, genres, sort } = filters
     const searchTerms = searchText
       ? searchText
         .toLowerCase()
@@ -199,24 +195,22 @@ export const filteredShows = combine(
       .filter(searchByText(searchTerms))
       .filter(filterShow(genres as any))
       .sort(sortByRating(sort as any))
-    //console.log('filtered = ', filtered.length)
+    // console.log('filtered = ', filtered.length)
     return filtered
   }
 )
 
 
-$shows.on(fetchShowsFx.done, (_, {params, result}) => {
-  return result
-})
+$shows.on(fetchShowsFx.done, (_, { params, result }) => result)
 
 fetchShowsFx()
 
-$shows.watch(state => {
-  //console.log(state)
+$shows.watch((state) => {
+  // console.log(state)
 })
 
-filteredShows.watch(state => {
-	console.log(JSON.stringify(state))
+filteredShows.watch((state) => {
+  console.log(JSON.stringify(state))
 })
 
 // changeFilter({
@@ -229,7 +223,7 @@ filteredShows.watch(state => {
 // })
 
 changeFilter({
-	sort: TEnumSortRating.ASC,
+  sort: TEnumSortRating.ASC,
   searchText: '',
   genres: ['Drama', 'Fantasy']
 })

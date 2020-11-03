@@ -90,7 +90,6 @@ export default class ShowsFilters extends Vue {
   }
 
   changeGenre(selectedGenres: string[]) {
-
     this.$store.dispatch({
       type: CHANGE_FILTERS,
       payload: {
