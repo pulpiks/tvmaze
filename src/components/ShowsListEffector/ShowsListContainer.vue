@@ -51,6 +51,7 @@ import { S } from '@/store/options'
 import ShowCard from '@/components/ShowCard/ShowCard.vue'
 import { TEnumFilters, TEnumSortRating, TFilterState } from '@/store/filters'
 import { SHOWS_LIST_PER_PAGE } from '@/constants/config'
+import { fetchShowsFx, filteredShows } from '@/models/shows/index'
 import { filterShow, sortByRating, searchByText } from './showsUtils'
 
 @Component({
@@ -73,10 +74,6 @@ export default class extends Vue {
 
   private perPage: number = SHOWS_LIST_PER_PAGE
 
-  get allShows() {
-    return this.$store.state.shows
-  }
-
   get pager() {
     const { currentPage, perPage } = this
     const start = (currentPage - 1) * perPage
@@ -86,24 +83,8 @@ export default class extends Vue {
     }
   }
 
-  get filteredShows() {
-    const { shows, filters } = this.$store.state as S
-
-    const searchTerms = filters.searchText
-      ? filters.searchText
-        .toLowerCase()
-        .split(/[,\s]+/)
-        .filter(term => term.length > 0)
-      : []
-
-    return shows
-      .filter(searchByText(searchTerms))
-      .filter(filterShow(filters.genres as any))
-      .sort(sortByRating(filters.sortRating as any))
-  }
-
   created() {
-    this.fetchShows()
+    fetchShowsFx()
   }
 
   async fetchShows() {
@@ -118,6 +99,10 @@ export default class extends Vue {
     } finally {
       this.loading = false
     }
+  }
+
+  effector() {
+    return filteredShows
   }
 }
 </script>

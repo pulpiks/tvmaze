@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import ShowsListContainer from '@/components/ShowsList/ShowsListContainer.vue'
+import ShowsListContainer from '@/components/ShowsListEffector/ShowsListContainer.vue'
 import ShowsFilters from '@/components/ShowsList/ShowsFilters.vue'
 
 @Component({
@@ -17,6 +17,6 @@ import ShowsFilters from '@/components/ShowsList/ShowsFilters.vue'
     ShowsFilters
   }
 })
-export default class Home extends Vue {
+export default class MainPage extends Vue {
 }
 </script>

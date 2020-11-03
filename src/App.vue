@@ -3,7 +3,7 @@
   <div id="app">
     <header class="container container-fluid text-center d-flex align-items-center justify-content-center bg-dark pt-2 pb-2">
       <img src="https://static.tvmaze.com/images/tvm-header-logo.png" alt="">
-      <h3 class="text-xl text-light ml-1"> Technical assignment </h3>
+      <h3 class="text-xl text-light ml-1">Technical assignment</h3>
     </header>
     <main class="container">
       <content-layout>
